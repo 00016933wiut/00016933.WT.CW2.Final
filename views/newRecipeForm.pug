@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    title Create New Recipe
+  body
+    header
+      h1 Create New Recipe
+    main
+      h2 Enter Recipe Details
+      form(action="/recipes" method="POST")
+      
+        label(for="recipeName") Recipe Name:
+        input(type="text" id="recipeName" name="recipeName" required)
+
+        label(for="listOfIngredients") Ingredients:
+        textarea(id="listOfIngredients" name="listOfIngredients" rows="1" required)
+
+        label(for="listOfSteps") Steps:
+        textarea(id="listOfSteps" name="listOfSteps" rows="1" required)
+
+        button(type="submit") Create Recipe
+      
+    footer
+      p © 2024 Recipe Sharing Platform

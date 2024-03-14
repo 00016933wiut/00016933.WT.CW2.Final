@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .header
+        form(action='/new-recipe' method='get')
+            button(type='submit') Create a New Recipe
+        h1 All Recipes
+    table
+        thead
+            tr
+                th Name of the meal
+                th Ingredients
+                th Steps
+                th Edit/Delete
+        tbody
+            each recipe in recipes
+                tr
+                td=recipe.name
+                td=recipe.ingredients
+                td=recipe.steps
+                td
+                    button.editBtn(data-id=recipe.id) Edit
+                    button.deleteBtn(data-del=recipe.id) Delete
+    
+    footer
+        p This web application was created to fulfill Web Technology modules requirements and does not represent an actual company or service
+
