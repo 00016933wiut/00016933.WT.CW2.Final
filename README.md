@@ -13,8 +13,8 @@ body-parser: This middleware parses incoming request bodies in a middleware befo
 method-override: This middleware allows to use HTTP verbs such as PUT or DELETE in places where the client doesn't support it, such as forms or hyperlinks
 
 The source code is uploaded to github.com:
-https://github.com/00016933wiut/00016933.wt.cw2
+https://github.com/00016933wiut/00016933.WT.CW2.Final
 
 I deployed this project to the service glitch.com
-peppered-turquoise-belly.glitch.me
+https://disco-stormy-toad.glitch.me/
 
