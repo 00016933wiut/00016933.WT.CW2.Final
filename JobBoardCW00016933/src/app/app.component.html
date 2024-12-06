@@ -1,0 +1,55 @@
+<!--This is work of a student of WIUT with ID of 00016933--->
+<div class="mainScreen">
+  <div class="mainList">
+  @if(listings$ | async; as listings){
+    @if(listings.length>0){
+      @for(item of listings;track $index){
+        <Div class="ticket">
+          <label>Company :  {{item.companyName}}</label>
+          <label >Position : {{item.position}}</label>        
+          <label>Salary : {{item.salary}}</label>
+          <div class="buttons">
+            <button class="deleteBTN" (click)="onDelete(item.id)">Delete</button>
+            <button class="editBTN" (click)="onEdit(item)">Edit</button>
+          </div>
+        </Div>
+      }
+    }
+    @else{
+      <p>Sadly there are no job listings</p>
+    }
+  }
+  </div>
+
+  <div *ngIf="editingListing">
+    <h3>Edit Listing</h3>
+    <form (ngSubmit)="updateItem()">
+      <input [(ngModel)]="editingListing.companyName" name="companyName" placeholder="Company Name" required />
+      <input [(ngModel)]="editingListing.position" name="position" placeholder="Position" required/>
+      <input [(ngModel)]="editingListing.salary" name="salary" placeholder="Salary" required />
+      <button type="submit">Save</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+
+  <div class="mainFormPage">
+    <form (ngSubmit)="onFormSubmited()" [formGroup]="listingsForm">
+        <div class="companyNameInput">
+            <label class="companyNameInputLabel">Company Name</label>
+            <input type="text" formControlName="companyName">
+        </div>
+      
+        <div class="positionInput">
+            <label class="positionInputLabel">Position</label>
+            <input type="text"formControlName="position">
+        </div>
+        
+        <div class="salaryInput">
+            <label class="salaryInputLabel">Salary</label>
+            <input type="text"formControlName="salary">
+        </div>
+
+        <button type="submit" class="px-4 py-2 rounded-sm w-full bg-slate-200 ">Add </button>
+    </form>
+  </div>
+</div>

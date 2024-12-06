@@ -1,0 +1,28 @@
+/*This is work of a student of WIUT with ID of 00016933*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ticket{
+    padding-bottom: 5px;
+    margin: 5px;
+    border:1px solid red;
+}
+
+.buttons{
+    margin: 10px;
+    border: round 1px solid red;
+
+}
+
+.deleteBTN{
+    margin-right: 10px;
+}
+
+label{
+    margin-right: 10px;
+}
+
+
+
